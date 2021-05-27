@@ -1,4 +1,5 @@
 import './App.css';
+import TodoContainer from './TodoContainer';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         </a>
       </header>
       <body>
-        <p>body</p>
+        <TodoContainer></TodoContainer>
       </body>
       <footer>
         <p>footer</p>
