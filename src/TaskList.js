@@ -1,3 +1,5 @@
+import { ListGroup, Col, ToggleButton, InputGroup, FormControl } from "react-bootstrap";
+
 const TaskList = (props) => {
     const onTaskCompleted = (id) => {
         props.setTasks(props.tasks.map(task => {
@@ -9,18 +11,21 @@ const TaskList = (props) => {
         }))
     }
     const tasks = props.tasks.map(task =>
-        <li key={task.Id}>
-            <div className="task">
-                <div className="task-description">{task.description}</div>
-                <input type="checkbox" className="task-is-complete" checked={task.isComplete} onChange={() => onTaskCompleted(task.id)} />
-            </div>
-        </li>
+        <ListGroup.Item key={task.id}>
+            <InputGroup>
+                <FormControl xs={7} value={task.description} />
+                <InputGroup.Checkbox
+                    type="checkbox"
+                    checked={task.isComplete}
+                    onChange={() => onTaskCompleted(task.id)} text="test" />
+            </InputGroup>
+        </ListGroup.Item>
     );
 
     return (
-        <ul>
+        <ListGroup>
             {tasks}
-        </ul>
+        </ListGroup>
     );
 }
 

@@ -1,9 +1,9 @@
-import {useState} from 'react'
+import { useState } from 'react'
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
 import TaskList from './TaskList';
 
 const TodoContainer = () => {
-
-
 
     const [tasks, setTasks] = useState([
         {
@@ -24,14 +24,14 @@ const TodoContainer = () => {
     ]);
 
     return (
-        <>
-            <div className="todo-container-header">
-                <h1>TODO:</h1>
-            </div>
-            <div className="todo-container">
-                <TaskList tasks={tasks} setTasks={setTasks} />
-            </div>
-        </>
+        <Col xs={{ span: 6, offset: 3 }} className="mt-4">
+            <Card>
+                <Card.Header>TODO:</Card.Header>
+                <Card.Body>
+                    <TaskList tasks={tasks} setTasks={setTasks} />
+                </Card.Body>
+            </Card>
+        </Col>
     )
 }
 
