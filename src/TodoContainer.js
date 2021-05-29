@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import Tasks from './Task'
+import TaskList from './TaskList';
 
 const TodoContainer = () => {
 
@@ -29,7 +29,7 @@ const TodoContainer = () => {
                 <h1>TODO:</h1>
             </div>
             <div className="todo-container">
-                <Tasks tasks={tasks} />
+                <TaskList tasks={tasks} setTasks={setTasks} />
             </div>
         </>
     )
