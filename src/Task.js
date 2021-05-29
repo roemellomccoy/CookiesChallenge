@@ -1,11 +1,18 @@
-import React from 'react';
+const TaskList = (props) => {
+    const tasks = props.tasks.map(task => 
+        <li key={task.Id}>
+            <div className="task">
+                <div className="task-description">{task.description}</div>
+                <input type="checkbox" className="task-is-complete" checked={task.isComplete} />
+            </div>
+        </li>
+    );
 
-const Task = () => {
     return (
-        <div className="task">
-            task1
-        </div>
+        <ul>
+            {tasks}
+        </ul>
     );
 }
 
-export default Task;
+export default TaskList;

@@ -16,12 +16,9 @@ function App() {
         >
           Learn React
         </a>
-      </header>
-      <body>
-        <TodoContainer></TodoContainer>
-      </body>
+      </header>      
+      <TodoContainer></TodoContainer>
       <footer>
-        <p>footer</p>
       </footer>
     </div>
   );
