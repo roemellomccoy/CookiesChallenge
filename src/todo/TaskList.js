@@ -1,6 +1,7 @@
-import { ListGroup, Col, ToggleButton, InputGroup, FormControl } from "react-bootstrap";
+import { ListGroup, InputGroup, FormControl } from "react-bootstrap";
 
 const TaskList = (props) => {
+
     const onTaskCompleted = (id) => {
         props.setTasks(props.tasks.map(task => {
             if (task.id === id) {
@@ -10,10 +11,11 @@ const TaskList = (props) => {
 
         }))
     }
+
     const tasks = props.tasks.map(task =>
         <ListGroup.Item key={task.id}>
             <InputGroup>
-                <FormControl xs={7} value={task.description} />
+                <FormControl xs={7} disabled defaultValue={task.description} />
                 <InputGroup.Checkbox
                     type="checkbox"
                     checked={task.isComplete}

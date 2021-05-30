@@ -1,8 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders navbar', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/Home/i);
-  expect(linkElement).toBeInTheDocument();
+beforeEach(() => render(<App />));
+
+test('Renders Header component', () => {
+  const navBar = screen.getByText(/Navbar with text/i);
+  expect(navBar).toBeInTheDocument();
 });
+
+test('Renders Todo container', () => {
+  const todoContainer = screen.getByText(/TODO/i);
+  expect(todoContainer).toBeInTheDocument();
+})
