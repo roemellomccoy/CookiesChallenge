@@ -6,7 +6,7 @@
             "request": "launch",
             "name": "Launch Edge against localhost",
             "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}",
+            "webRoot": "${workspaceFolder}/frontend",
         },
         {
             "name": "Debug CRA Tests",
@@ -27,6 +27,12 @@
                 "CI": "true"
             },
             "disableOptimisticBPs": true
+        },
+        {
+            "name":"Launch Express API",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/backend/api.js"
         }
     ]
 }
