@@ -1,27 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import TodoList from './TodoList';
 
 const TodoContainer = () => {
 
-    const [todos, setTodos] = useState([
-        {
-            id: 1,
-            description: "my first task!",
-            isComplete: false
-        },
-        {
-            id: 2,
-            description: "a completed task!",
-            isComplete: true
-        },
-        {
-            id: 3,
-            description: "something to do with tacos!",
-            isComplete: false
-        },
-    ]);
+    const [todos, setTodos] = useState([]);
+
+    useEffect(() => {
+        const getTodosAsync = async () => {
+            const todos = await fetch('http://localhost:5000/api/todos');
+            setTodos(todos);
+        }
+        getTodosAsync();
+    }, [])
 
     return (
         <Col xs={{ span: 6, offset: 3 }} className="mt-4">

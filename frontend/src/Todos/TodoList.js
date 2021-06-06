@@ -1,34 +1,34 @@
 import { ListGroup, InputGroup, FormControl } from "react-bootstrap";
 
-const TaskList = (props) => {
+const TodoList = (props) => {
 
-    const onTaskCompleted = (id) => {
-        props.setTasks(props.tasks.map(task => {
-            if (task.id === id) {
-                task.isComplete = !task.isComplete;
+    const onTodoCompleted = (id) => {
+        props.setTodos(props.todos.map(todo => {
+            if (todo.id === id) {
+                todo.isComplete = !todo.isComplete;
             }
-            return task;
+            return todo;
 
         }))
     }
 
-    const tasks = props.tasks.map(task =>
-        <ListGroup.Item key={task.id}>
+    const todos = props.todos.map(todo =>
+        <ListGroup.Item key={todo.id}>
             <InputGroup>
-                <FormControl xs={7} disabled defaultValue={task.description} />
+                <FormControl xs={7} disabled defaultValue={todo.description} />
                 <InputGroup.Checkbox
                     type="checkbox"
-                    checked={task.isComplete}
-                    onChange={() => onTaskCompleted(task.id)} text="test" />
+                    checked={todo.isComplete}
+                    onChange={() => onTodoCompleted(todo.id)} text="test" />
             </InputGroup>
         </ListGroup.Item>
     );
 
     return (
         <ListGroup>
-            {tasks}
+            {todos}
         </ListGroup>
     );
 }
 
-export default TaskList;
+export default TodoList;

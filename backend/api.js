@@ -22,6 +22,7 @@ app.get('/api/todos', (req, res) => {
             isComplete: false
         },
     ];
+    res.send(todos);
 });
 
 const port = 5000;
