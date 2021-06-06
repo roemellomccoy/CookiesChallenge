@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
-import TaskList from './TaskList';
+import TodoList from './TodoList';
 
 const TodoContainer = () => {
 
-    const [tasks, setTasks] = useState([
+    const [todos, setTodos] = useState([
         {
             id: 1,
             description: "my first task!",
@@ -28,7 +28,7 @@ const TodoContainer = () => {
             <Card>
                 <Card.Header>TODO:</Card.Header>
                 <Card.Body>
-                    <TaskList tasks={tasks} setTasks={setTasks} />
+                    <TodoList todos={todos} setTodos={setTodos} />
                 </Card.Body>
             </Card>
         </Col>
