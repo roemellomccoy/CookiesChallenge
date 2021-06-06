@@ -5,9 +5,7 @@
   "repository": "git@github.com:literallywar/react-example-todo.git",
   "author": "literallywar",
   "dependencies": {
-    "express": "^4.17.1",
-    "require": "^2.4.20",
-    "requirejs": "^2.3.6"
+    "express": "^4.17.1"
   },
   "type": "module"
 }
