@@ -1,5 +1,5 @@
 import { Navbar, Container, Nav } from 'react-bootstrap';
-
+import HeaderUserInfo from './HeaderUserInfo'
 
 const Header = () => {
     return (
@@ -13,7 +13,7 @@ const Header = () => {
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
-                        Signed in as: <a href="#login">Some User</a>
+                        <HeaderUserInfo/>
                     </Navbar.Text>
                 </Navbar.Collapse>
             </Container>

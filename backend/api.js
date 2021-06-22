@@ -3,7 +3,8 @@ import cors from 'cors';
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(express.json());
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
@@ -26,6 +27,12 @@ app.get('/api/todos', (req, res) => {
         },
     ];
     res.send(todos);
+});
+
+app.get('/api/username', (_, response) => {
+    const username = 'A user from the cookie!'
+    response.cookie('username', username)
+    response.end();
 });
 
 const port = 5000;
