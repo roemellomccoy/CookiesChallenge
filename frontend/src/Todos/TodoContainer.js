@@ -9,7 +9,8 @@ const TodoContainer = () => {
 
     useEffect(() => {
         const getTodosAsync = async () => {
-            const todos = await fetch('http://localhost:5000/api/todos');
+            const response = await fetch('http://localhost:5000/api/todos');
+            const todos = await response.json();
             setTodos(todos);
         }
         getTodosAsync();
