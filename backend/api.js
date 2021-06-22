@@ -3,12 +3,20 @@ import cors from 'cors';
 
 const app = express();
 
+//cors must be set to the react app's domain, and credentials allowed in order to successfully set cookies on the browser.
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 app.use(express.json());
 
-app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (_, res) => res.send('Hello World!'));
 
-app.get('/api/todos', (req, res) => {
+
+app.get('/api/username', (_, response) => {
+    const username = 'A user from the cookie!'
+    response.cookie('username', username)
+    response.end();
+});
+
+app.get('/api/todos', (_, res) => {
     const todos = [
         {
             id: 1,
@@ -27,12 +35,6 @@ app.get('/api/todos', (req, res) => {
         },
     ];
     res.send(todos);
-});
-
-app.get('/api/username', (_, response) => {
-    const username = 'A user from the cookie!'
-    response.cookie('username', username)
-    response.end();
 });
 
 const port = 5000;
