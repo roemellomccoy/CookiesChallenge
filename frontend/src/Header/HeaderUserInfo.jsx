@@ -14,7 +14,7 @@ const HeaderUserInfo = () => {
             setUsername(Cookies.get('username'));
         }
         getUsernameAsync();
-    }, [username]);
+    });
 
     return (
         <>
