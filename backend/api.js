@@ -1,5 +1,5 @@
-import express from 'express';
-import cors from 'cors';
+const express = require('express');
+const cors = require('cors');
 
 const app = express();
 
@@ -12,7 +12,7 @@ app.get('/', (_, res) => res.send('Hello World!'));
 
 app.get('/api/cookies/username', (_, response) => {
     const username = 'A user from the cookie!'
-    response.cookie('username', username)
+    response.cookie('username', username, {domain})
     response.end();
 });
 
