@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import Cookies from 'js-cookie'
 
-const api = 'http://localhost:5000/api' //todo: get this from config, you know better.
-
+const api = 'http://localhost:5000/api'
 const HeaderUserInfo = () => {
 
     const [username, setUsername] = useState('Some User');

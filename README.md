@@ -1,3 +1,20 @@
+# Lesson: Cookies
+
+By the end of this lesson, you should be able to:
+
+- Set cookies in the browser
+- Read cookies from a request
+
+## Example 
+
+The `HeaderUserInfo.jsx` file has a working example to get cookies!
+
+## Task
+
+The UI is set up for you, but make sure to check it out and understand it - ask any questions!
+
+`api.js` has been cleared out, and some todos were added - put a `b` in the chat once you're done
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
