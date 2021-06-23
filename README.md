@@ -15,6 +15,11 @@ The UI is set up for you, but make sure to check it out and understand it - ask 
 
 `api.js` has been cleared out, and some todos were added - put a `b` in the chat once you're done
 
+## Resources
+
+[CORS in express](http://expressjs.com/en/resources/middleware/cors.html)
+[withCredentials](https://stackoverflow.com/questions/27406994/http-requests-withcredentials-what-is-this-and-why-using-it/27407440#:~:text=Short%20answer%3A,work%20with%20this%20option%20set.)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
