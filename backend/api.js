@@ -10,7 +10,7 @@ app.use(express.json());
 app.get('/', (_, res) => res.send('Hello World!'));
 
 
-app.get('/api/username', (_, response) => {
+app.get('/api/cookies/username', (_, response) => {
     const username = 'A user from the cookie!'
     response.cookie('username', username)
     response.end();
