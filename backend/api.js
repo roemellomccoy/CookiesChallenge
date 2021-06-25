@@ -14,10 +14,12 @@ app.get('/', (_, res) => res.send('Hello World!'));
 
 //todo: Return an array containing the cookies from the request. - hint: Object.entries may come in handy.
 app.get('/api/cookies', (request, response) => {
+    response.send(request.cookies)
 });
 
 //todo: Create a cookie with a random value.
 app.post('/api/cookies/random', (request, response) => {
+    response.cookie("theme", "dark")
 });
 
 //todo: Update the username cookie.
@@ -33,6 +35,7 @@ app.get('/api/cookies/username', (_, response) => {
 
 //todo: Delete the username cookie.
 app.delete('/api/cookies/username', (_, response) => {
+    response.clearCookie("username")
 });
 
 const port = 5000;

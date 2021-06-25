@@ -26,20 +26,20 @@ const CookieContainer = () => {
     const deleteUsernameCookie = async () => {
         await fetch(`${api}/cookies/username`, {credentials: 'include', method: 'delete'})
     };
+        return (
+            <Col xs={{ span: 6, offset: 3 }} className="mt-4">
+                <Card>
+                    <Card.Header>Cookies:</Card.Header>
+                    <Card.Body>
+                        {cookies.map((cookie, index) => <ListGroupItem key={index}>{JSON.stringify(cookie)}</ListGroupItem>)}
+                    </Card.Body>
+                </Card>
+                <Button onClick={() => addRandomCookie()}>Add a random cookie</Button>
+                <Button variant='success' onClick={() => updateUsernameCookie()}>Update Username Cookie</Button>
+                <Button variant='danger' onClick={() => deleteUsernameCookie()}>Delete Username Cookie</Button>
+            </Col>
+        );
 
-    return (
-        <Col xs={{ span: 6, offset: 3 }} className="mt-4">
-            <Card>
-                <Card.Header>Cookies:</Card.Header>
-                <Card.Body>
-                    {cookies.map((cookie, index) => <ListGroupItem key={index}>{JSON.stringify(cookie)}</ListGroupItem>)}
-                </Card.Body>
-            </Card>
-            <Button onClick={() => addRandomCookie()}>Add a random cookie</Button>
-            <Button variant='success' onClick={() => updateUsernameCookie()}>Update Username Cookie</Button>
-            <Button variant='danger' onClick={() => deleteUsernameCookie()}>Delete Username Cookie</Button>
-        </Col>
-    );
 }
 
 export default CookieContainer;
